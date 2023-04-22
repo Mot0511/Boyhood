@@ -1,8 +1,8 @@
 .main{
   width: 100vw;
   height: 100vh;
-  background: green;
   position: relative;
+  transition: background-image 0.3s;
 }
 .text{
   position: absolute;
@@ -21,4 +21,19 @@
 }
 .text p:nth-of-type(2){
   font-size: 28px;
+}
+.hide{
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  bottom: 0;
+}
+.hide:hover{
+  background-color: black;
+  opacity: 0.8;
 }

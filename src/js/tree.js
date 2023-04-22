@@ -13,7 +13,19 @@ const tree = [
     },
     {
         id: 3,
+        next: [4, 5]
+    },
+    {
+        id: 4,
+        next: 6
+    },
+    {
+        id: 5,
+        next: 6
+    },
+    {
+        id: 6,
         next: 0
-    }
+    },
 ]
 export default tree
