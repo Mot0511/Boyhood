@@ -5,7 +5,7 @@ import Choice from "./components/choice/choice";
 import tree from './js/tree'
 import setBg from './js/setBg'
 
-import home from './img/home.jpg'
+const home = require('./img/home.jpg')
 
 const App = () => {
 
