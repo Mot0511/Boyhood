@@ -1,9 +1,8 @@
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import './index.css'
 import content from './js/content.js'
 import Choice from "./components/choice/choice";
 import tree from './js/tree'
-import setBg from './js/setBg'
 
 const home = require('./img/home.jpg')
 
@@ -17,8 +16,13 @@ const App = () => {
 
     const [image, setImage] = useState(home)
 
-    const nextStep = () => {
+    useEffect(() => {
+        const bgs = ['home', 'school', 'class', 'street']
+        bgs.map(bg => setImage(require(`./img/${bg}.jpg`)))
+        setImage(home)
+    }, [])
 
+    const nextStep = () => {
         if (!lock){
         if (content[line].length === step + 1){
             setStep(0)
@@ -29,9 +33,13 @@ const App = () => {
             setStep(step + 1)
         }
 
+        }
     }
-}
-
+    const setBg = (image, setImage, nextStep) => {
+        setImage(require(`./img/${image}.jpg`))
+        nextStep()
+        return ''
+    }
 
     return (
       <>
